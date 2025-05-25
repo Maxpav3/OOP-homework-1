@@ -1,5 +1,7 @@
 class Student:
+    
     student_list = []
+    
     def __init__(self, student_name, student_surname):
         self.student_name = student_name
         self.student_surname = student_surname
@@ -16,7 +18,6 @@ class Student:
     def stulist(cls):
         for student in cls.student_list:
             print(f'{student.student_name}')
-
 
     def grading_lecturers(self, lecturer, course, grade):
         if isinstance(lecturer, Lecturer) and course in lecturer.teaching_course and course in self.student_course:
@@ -36,10 +37,13 @@ class Student:
 
     def __str__(self):
         return f' Name: {self.student_name}\n Surname: {self.student_surname}\n Средняя оценка за домашние задания: {self.average_rating()}\n Курсы в процессе изучени: {self.student_course}\n Завершенные курсы: {self.finished_courses}'
+    
     def __eq__(self, other):
         return self.average_rating() == other.average_rating()
+    
     def __lt__(self, other):
         return self.average_rating() < other.average_rating()
+    
     def __le__(self, other):
         return self.average_rating() <= other.average_rating()
 
@@ -97,10 +101,13 @@ class Lecturer(Mentor):
 
     def __eq__(self, other):
         return self.avarage_rating() == other.avarage_rating()
+    
     def __lt__(self, other):
         return self.avarage_rating() < other.avarage_rating()
+    
     def __le__(self, other):
         return self.avarage_rating() <= other.avarage_rating()
+
 
 def average_homework_grade(students, course):
     total = 0
