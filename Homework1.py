@@ -167,7 +167,5 @@ print()
 print()
 print(reviewer_evgeny)
 print()
-
 print(f'Средняя оценка студентов: {average_lecture_grade(Lecturer.get_instances(), 'math')}')
-
 print(f'Средняя оценка лекторов: {average_homework_grade(student_alex.get_instances(), 'math')}')
